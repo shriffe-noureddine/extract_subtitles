@@ -1,11 +1,12 @@
 import operator
-import wordsClass
+from wordsClass import wordsClass
 import pyperclip
-
 sub = pyperclip.paste()
 
 words = sub.lower().split()
-wordsClass = wordsClass()
+# class wordsClass:
+#     words = ['the', 'he', 'she']
+myWords = wordsClass()
 
 def clean_up_list(list_words):
     dec_words = {}
@@ -23,7 +24,7 @@ def clean_up_list(list_words):
             dec_words.setdefault(word, 0)
             dec_words[word] += 1
 
-        for known_word in wordsClass.words:
+        for known_word in myWords.words:
             if known_word in dec_words:
                 del dec_words[known_word]
 
