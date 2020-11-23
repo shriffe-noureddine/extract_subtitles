@@ -1,11 +1,11 @@
 import operator
-
+import wordsClass
 import pyperclip
 
 sub = pyperclip.paste()
 
 words = sub.lower().split()
-
+wordsClass = wordsClass()
 
 def clean_up_list(list_words):
     dec_words = {}
@@ -22,6 +22,10 @@ def clean_up_list(list_words):
         if len(word) > 1:
             dec_words.setdefault(word, 0)
             dec_words[word] += 1
+
+        for known_word in wordsClass.words:
+            if known_word in dec_words:
+                del dec_words[known_word]
 
     for k, v in sorted(dec_words.items(), key=operator.itemgetter(1)):
         print(k, v)
