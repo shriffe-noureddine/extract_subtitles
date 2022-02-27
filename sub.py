@@ -5,7 +5,6 @@ from wordsClass import wordsClass
 # pip install pyperclip
 import pyperclip
 sub = pyperclip.paste()
-# sub = wordsClass.text()
 
 words = sub.lower().split()
 # class wordsClass:
