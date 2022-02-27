@@ -3,6 +3,7 @@ from wordsClass import wordsClass
 # curl https:///bootstrap.pypa.io/get-pip.py -o get-pip.py
 # python get-pip.py
 # pip install pyperclip
+# =CHAR(39) & A1 & CHAR(39) & CHAR(44) for excel
 import pyperclip
 sub = pyperclip.paste()
 
